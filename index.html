@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curry कथा</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Curry कथा</h1>
+    </header>
+    <main>
+        <!-- Add Recipe Section -->
+        <section id="add-recipe-section">
+            <h2>Add Recipe</h2>
+            <form id="recipe-form">
+                <label for="recipe-name">Recipe Name:</label>
+                <input type="text" id="recipe-name" placeholder="e.g., Butter Chicken" required>
+                
+                <label for="ingredients">Ingredients:</label>
+                <textarea id="ingredients" placeholder="List all ingredients here..." required></textarea>
+                
+                <label for="steps">Preparation Steps:</label>
+                <textarea id="steps" placeholder="Describe preparation steps here..." required></textarea>
+                
+                <label for="recipe-image">Upload Image:</label>
+                <input type="file" id="recipe-image" accept="image/*" required>
+                
+                <button type="submit">Add Recipe</button>
+            </form>
+        </section>
+        
+        <!-- Search Section -->
+        <section id="search-section">
+            <h2>Search Recipes</h2>
+            <input type="text" id="search-bar" placeholder="Search by name or ingredient">
+        </section>
+        
+        <!-- Recipes List Section -->
+        <section id="recipe-list">
+            <h2>All Recipes</h2>
+            <div id="recipes-container"></div>
+        </section>
+    </main>
+
+    <!-- Recipe Details Section (Rendered Dynamically) -->
+    <div id="recipe-details-page" style="display:none;">
+        <button id="back-button">← Back</button>
+        <div id="recipe-details"></div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
