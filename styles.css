@@ -12,13 +12,16 @@ header {
     background-color: #ff5722;
     color: white;
     text-align: center;
-    padding: 1rem 0;
+    /* padding: 1rem 0; */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-header h1, header .hindi {
-    margin: 0;
+.logo {
+    height: 70px;
+    width: auto;
+   
 }
+
 
 main {
     max-width: 1200px;
