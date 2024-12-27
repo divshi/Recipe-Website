@@ -9,54 +9,54 @@
       "name": "Paneer Tikka",
       "ingredients": "Paneer, Spices, Yogurt, Lemon Juice",
       "steps": "1. Marinate paneer with spices, yogurt, and lemon juice. 2. Grill until golden and serve with mint chutney.",
-      "image": "image/paneer-tikka.jpg"
+      "image": "./image/paneer-tikka.jpg"
     },
     {
       "name": "Vegetable Biryani",
       "ingredients": "Rice, Mixed Vegetables, Spices, Yogurt, Saffron",
       "steps": "1. Cook rice and vegetables with spices and yogurt. 2. Layer and steam with saffron for a fragrant aroma. 3. Garnish with fried onions and serve with raita.",
-      "image": "image/vegetable-biryani.jpg"
+      "image": "./image/vegetable-biryani.jpg"
     },
     {
       "name": "Chole Bhature",
       "ingredients": "Chickpeas, Flour, Yogurt, Spices, Onion, Tomatoes",
       "steps": "1. Soak chickpeas overnight and cook with spices. 2. Prepare dough and deep fry bhaturas. 3. Serve chickpeas with hot bhaturas.",
-      "image": "images/chole-bhature.jpg"
+      "image": "./image/chole-bhature.jpg"
     },
     {
       "name": "Aloo Paratha",
       "ingredients": "Whole Wheat Flour, Potato, Spices, Ghee",
       "steps": "1. Mash potatoes and mix with spices. 2. Roll dough, stuff with the potato mixture, and cook on a griddle with ghee.",
-      "image": "image/aloo-paratha.jpg"
+      "image": "./image/aloo-paratha.jpg"
     },
     {
       "name": "Tandoori Chicken",
       "ingredients": "Chicken, Yogurt, Spices, Lemon Juice, Mustard Oil",
       "steps": "1. Marinate chicken with yogurt, spices, lemon juice, and mustard oil. 2. Grill until charred and serve with a side of onions and mint chutney.",
-      "image": "image/tandoori-chicken.jpg"
+      "image": "./image/tandoori-chicken.jpg"
     },
     {
       "name": "Palak Paneer",
       "ingredients": "Spinach, Paneer, Tomatoes, Onion, Spices",
       "steps": "1. Cook spinach and blend into a puree. 2. Cook paneer cubes with spices and mix in the spinach puree. 3. Serve with roti or rice.",
-      "image": "image/palak-paneer.jpg"
+      "image": "./image/palak-paneer.jpg"
     },
     {
       "name": "Dal Makhani",
       "ingredients": "Black Lentils, Kidney Beans, Butter, Cream, Spices",
       "steps": "1. Soak lentils and kidney beans overnight. 2. Cook with spices, butter, and cream. 3. Serve with naan or rice.",
-      "image": "image/dal-makhani.jpg"
+      "image": "./image/dal-makhani.jpg"
     },
     {
       "name": "Methi Thepla",
       "ingredients": "Fenugreek Leaves, Wheat Flour, Spices",
       "steps": "1. Knead dough with fenugreek leaves and spices. 2. Roll and cook on a griddle with ghee. 3. Serve with yogurt or pickle.",
-      "image": "image/methi-thepla.jpg"
+      "image": "./image/methi-thepla.jpg"
     },
     {
       "name": "Gulab Jamun",
       "ingredients": "Milk Powder, Sugar, Ghee, Water, Cardamom",
       "steps": "1. Make dough with milk powder, ghee, and water. 2. Shape into balls and fry. 3. Soak in sugar syrup with cardamom and rose water.",
-      "image": "image/gulab-jamun.jpg"
+      "image": "./image/gulab-jamun.jpg"
     }
 ]
