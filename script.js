@@ -1,11 +1,27 @@
 let recipes = [];
-let visibleRecipes = 6;  // Start with 6 visible recipes
+let visibleRecipes = 6; // Start with 6 visible recipes
 
-// Fetch recipes from JSON file
+// Initialize recipes from localStorage
+function loadRecipesFromStorage() {
+  const storedRecipes = localStorage.getItem('recipes');
+  if (storedRecipes) {
+    recipes = JSON.parse(storedRecipes);
+  }
+}
+
+// Save recipes to localStorage
+function saveRecipesToStorage() {
+  localStorage.setItem('recipes', JSON.stringify(recipes));
+}
+
+// Fetch initial recipes (if using a JSON file)
 fetch('recipes.json')
   .then(response => response.json())
   .then(data => {
-    recipes = data;
+    if (!recipes.length) {
+      recipes = data; // Only load from JSON if localStorage is empty
+      saveRecipesToStorage();
+    }
     displayRecipes();
   })
   .catch(error => console.error('Error fetching recipes:', error));
@@ -67,20 +83,18 @@ window.addEventListener('click', (event) => {
 
 // Toggle visibility of recipes and change button to 'Back' when clicked
 document.getElementById('more-recipes-btn').addEventListener('click', () => {
-    const moreRecipesBtn = document.getElementById('more-recipes-btn');
-    
-    // If "More Recipes" button is clicked, show all recipes and change button to "Back"
-    if (moreRecipesBtn.innerText === 'More Recipes') {
-      visibleRecipes = recipes.length;  // Show all recipes
-      moreRecipesBtn.innerText = 'Back';  // Change button text
-    } else {
-      visibleRecipes = 6;  // Show only 6 recipes
-      moreRecipesBtn.innerText = 'More Recipes';  // Change button text back
-    }
-    
-    displayRecipes();
-  });
+  const moreRecipesBtn = document.getElementById('more-recipes-btn');
   
+  // Toggle between showing all and limited recipes
+  if (moreRecipesBtn.innerText === 'More Recipes') {
+    visibleRecipes = recipes.length; // Show all recipes
+    moreRecipesBtn.innerText = 'Back'; // Change button text
+  } else {
+    visibleRecipes = 6; // Show only 6 recipes
+    moreRecipesBtn.innerText = 'More Recipes'; // Change button text back
+  }
+  displayRecipes();
+});
 
 // Search recipes by name
 document.getElementById('search-bar').addEventListener('input', (e) => {
@@ -91,14 +105,42 @@ document.getElementById('search-bar').addEventListener('input', (e) => {
   displayRecipes(filteredRecipes);
 });
 
+// Convert uploaded image to Base64
+function convertToBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = error => reject(error);
+    reader.readAsDataURL(file);
+  });
+}
+
 // Add a new recipe
-document.getElementById('recipe-form').addEventListener('submit', (e) => {
+document.getElementById('recipe-form').addEventListener('submit', async (e) => {
   e.preventDefault();
   const name = document.getElementById('recipe-name').value;
   const ingredients = document.getElementById('ingredients').value;
   const steps = document.getElementById('steps').value;
-  const image = 'image/default.jpg';  // Use a default image for now
-  recipes.push({ name, ingredients, steps, image });
+  const fileInput = document.getElementById('recipe-image');
+
+  let image = 'image/default.jpg'; // Default image
+  if (fileInput.files.length > 0) {
+    try {
+      image = await convertToBase64(fileInput.files[0]);
+    } catch (error) {
+      console.error('Error converting image to Base64:', error);
+    }
+  }
+
+  const newRecipe = { name, ingredients, steps, image };
+  recipes.push(newRecipe);
+  saveRecipesToStorage(); // Save the updated recipes to localStorage
   displayRecipes();
   e.target.reset();
+});
+
+// Load recipes on page load
+document.addEventListener('DOMContentLoaded', () => {
+  loadRecipesFromStorage();
+  displayRecipes();
 });
