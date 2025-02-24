@@ -7,19 +7,49 @@ body {
     color: #333;
     line-height: 1.6;
 }
-
 header {
     background-color: #ff5722;
     color: white;
-    text-align: center;
-    /* padding: 1rem 0; */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative; /* Ensures proper positioning */
+    padding: 0 2rem;
+}
+
+.nav-left,
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* Adjust spacing */
+}
+
+.nav-left ul,
+.nav-right ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 1.5rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.center-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 25px; 
 }
 
 .logo {
-    height: 70px;
+    height: 50px;
     width: auto;
-   
 }
 
 
