@@ -96,6 +96,45 @@ nav ul li a {
     border-radius: 10px;
 }
 
+main #Popular_heading {
+    font-size: 4rem;
+    color: #ff5722;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.popular-recipe {
+    display: flex;
+    align-items: center;
+    gap: 200px;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 80px;
+    margin-bottom: 200px;
+}
+
+.popular-recipe img {
+    width: auto; 
+    height: 300px;
+}
+
+.recipe-info h3 {
+    margin: 0;
+    font-size: 2.4em;
+    color: #ff5722;
+}
+
+.recipe-info p {
+    margin: 5px 0 0;
+    color: #333;
+    font-size: 1rem;
+}
+
+.recipe-info hr {
+    background-color: #e64a19 ;
+    border: none ;
+    height: 2px ;
+}
 
 main {
     max-width: 1200px;
@@ -186,7 +225,7 @@ button:hover {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#right-section h2 {
+#right-section #Add_recipe {
     color: #ff5722;
     margin-bottom: 1rem;
 }
@@ -265,4 +304,15 @@ form input, form textarea, form button {
     margin: 0 0 1rem;
     line-height: 1.5;
     color: #555;
+}
+
+footer {
+    background-color: #ff5722; 
+    color: white; 
+    text-align: center; 
+    padding: 1rem; 
+    font-size: 1.2rem; 
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
