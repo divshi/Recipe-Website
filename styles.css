@@ -84,6 +84,28 @@ nav ul li a {
     border-radius: 5px;
 }
 
+#search-dropdown {
+    position: absolute;
+    width: 70%;
+    background: white;
+    border: 1px solid #ddd;
+    display: none;
+    max-height: 200px;
+    overflow-y: auto;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+#search-dropdown div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+#search-dropdown div:hover {
+    background: #ff5722;
+    color: white;
+}
+
 #new-hero-right {
     flex: 1;
     display: flex;
